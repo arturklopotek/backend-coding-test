@@ -53,10 +53,10 @@ var options = {
 	uglify: {
 		compress: {
 			drop_console: true,
-			sequences: true, // join consecutive statemets with the ìcomma operatorî
+			sequences: true, // join consecutive statemets with the ‚Äúcomma operator‚Äù
 			properties: true, // optimize property access: a["foo"] ? a.foo
 			dead_code: true, // discard unreachable code
-			drop_debugger: true, // discard ìdebuggerî statements
+			drop_debugger: true, // discard ‚Äúdebugger‚Äù statements
 			unsafe: false, // some unsafe optimizations (see below)
 			conditionals: true, // optimize if-s and conditional expressions
 			comparisons: true, // optimize comparisons
@@ -198,7 +198,7 @@ gulp.task("css", function() {
 gulp.task("apps-partials", function() {
 	return gulp.src(buildPathArray(paths.build.source, lists.apps.partials))
 		.pipe(foreach(function(stream, file) {
-			var pathArray = file.path.split("/");
+			var pathArray = file.path.split(path.sep);
 			pathArray.pop();
 			var basename = pathArray.pop();
 			
@@ -221,7 +221,7 @@ gulp.task("apps-partials", function() {
 gulp.task("apps-scripts", ["apps-partials"], function() {
 	return gulp.src(buildPathArray(paths.build.source, lists.apps.build))
 		.pipe(foreach(function(stream, file) {
-			var pathArray = file.path.split("/");
+			var pathArray = file.path.split(path.sep);
 			pathArray.pop();
 			var basename = pathArray.pop();
 			

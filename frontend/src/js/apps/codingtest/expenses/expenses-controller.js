@@ -32,9 +32,9 @@ app.controller("ctrlExpenses", ["$rootScope", "$scope", "Restangular", function 
 	$scope.saveExpense = function() {
 		if ($scope.expensesform.$valid) {
 			// Post the expense via REST
-			$Restangular.one("expenses").post(null, $scope.newExpense).then(function() {
-				// Reload new expenses list
-				loadExpenses();
+			$Restangular.one("expenses").post(null, $scope.newExpense).then(function(expense) {
+				expense.saved = true; // used for visual feedback
+				$scope.expenses.push(expense);
 			});
 		}
 	};

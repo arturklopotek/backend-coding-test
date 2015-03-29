@@ -15,6 +15,8 @@ require("../shared/forms/resize-directives.js");
 require("./app-partials.js");
 require("./expenses/main.js");
 
+var config = require("./config.js");
+
 // Declare app level module which depends on filters, and services
 var app = angular.module("alcExpenses", [
 	"ngRoute",
@@ -34,9 +36,10 @@ var app = angular.module("alcExpenses", [
 	"expenses.controllers"
 ]);
 
-app.config(["$routeProvider", function($routeProvider) {
+app.config(["$routeProvider", "RestangularProvider", function($routeProvider, RestangularProvider) {
 	// Global routes
 	$routeProvider.when("/version", { templateUrl: "version-content.html" });
+	RestangularProvider.setBaseUrl(config.api.baseUrl);
 }]);
 
 app.run(["$rootScope", function($rootScope) {

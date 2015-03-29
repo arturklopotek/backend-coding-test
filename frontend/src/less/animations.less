@@ -3,3 +3,12 @@
 Animation styles
 
 ******************************************************************************************/
+@keyframes fadeIn {
+  0%{background: @app-navigation-border-color;}
+  25%{background: @app-navigation-border-color;}
+  100%{background:none;}
+}
+.body-row.saved {
+  animation-name: fadeIn;
+  animation-duration: 4s;
+}
