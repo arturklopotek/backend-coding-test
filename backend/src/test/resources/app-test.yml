@@ -3,8 +3,7 @@ vat:
 
 database:
   driverClass: org.apache.derby.jdbc.EmbeddedDriver
-#  url: jdbc:derby:memory:expenses-test;create=true
-  url: jdbc:derby:target/expenses-db;create=true
+  url: jdbc:derby:memory:expenses-test;create=true
   user: user
   maxWaitForConnection: 1s
   validationQuery: "values 1"
