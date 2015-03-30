@@ -4,8 +4,9 @@ vat:
 
 database:
   driverClass: com.mysql.jdbc.Driver
-  url: jdbc:mysql://localhost/expenses
-  user: root
+  url: jdbc:mysql://db4free.net/codingtest
+  user: codingtest
+  password: BZx2c4d8OW
   maxWaitForConnection: 1s
   validationQuery: "SELECT 1"
   validationQueryTimeout: 3s
