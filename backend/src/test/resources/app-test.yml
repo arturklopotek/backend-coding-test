@@ -1,0 +1,16 @@
+vat:
+  rate: 0.20 
+
+database:
+  driverClass: org.apache.derby.jdbc.EmbeddedDriver
+#  url: jdbc:derby:memory:expenses-test;create=true
+  url: jdbc:derby:target/expenses-db;create=true
+  user: user
+  maxWaitForConnection: 1s
+  validationQuery: "values 1"
+  validationQueryTimeout: 3s
+  minSize: 8
+  maxSize: 32
+  checkConnectionWhileIdle: false
+  evictionInterval: 10s
+  minIdleTime: 1 minute
